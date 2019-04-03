@@ -1,7 +1,7 @@
 package guru.springframework.spring5webapp.model;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -16,7 +16,7 @@ public class Author {
     @ManyToMany
     @JoinTable(name="author_book", joinColumns = @JoinColumn(name="book_id"),
             inverseJoinColumns = @JoinColumn(name="author_id"))
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
 
     public Author() {}
 

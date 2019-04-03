@@ -3,6 +3,7 @@ package guru.springframework.spring5webapp.model;
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
+import java.util.HashSet;
 
 @Entity
 public class Book {
@@ -14,7 +15,7 @@ public class Book {
     private String publisher;
 
     @ManyToMany
-    private Set<Author> authors;
+    private Set<Author> authors = new HashSet<>();
 
     public Book() {
     }
